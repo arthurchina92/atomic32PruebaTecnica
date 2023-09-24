@@ -6,11 +6,12 @@ import ImaginaCard from './src/components/PhraseCards/ImaginaCard';
 import ExploraCard from './src/components/PhraseCards/ExploraCard';
 import ConquistaCard from './src/components/PhraseCards/ConquistaCard';
 import CardsCarousel from './src/components/PhraseCards';
+import LoginScreen from './src/screens/LoginScreen';
 
 function App() {
   return (
     <>
-      <Router />
+      <LoginScreen />
     </>
   );
 }
