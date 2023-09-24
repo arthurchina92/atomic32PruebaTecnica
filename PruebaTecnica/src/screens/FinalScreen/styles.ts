@@ -1,14 +1,17 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  body: {
+    flex: 1,
+  },
   image: {
     resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'center',
   },
   image1: {
-    height: 70,
-    width: 70,
+    height: 50,
+    width: 50,
   },
   titleContainer: {
     flexDirection: 'row',
@@ -60,6 +63,32 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: '#c20000',
+  },
+  astronaut3: {
+    height: 400,
+    width: 450,
+    resizeMode: 'contain',
+  },
+  footer: {
+    backgroundColor: '#000000',
+    textAlign: 'center',
+  },
+  footerText: {
+    color: '#ffff',
+    textAlign: 'center',
+    marginTop: 30,
+    fontSize: 15,
+  },
+  icons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconImg: {
+    height: 25,
+    resizeMode: 'contain',
+    marginVertical: 40,
+    marginHorizontal: 20,
   },
 });
 

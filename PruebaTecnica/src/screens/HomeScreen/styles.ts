@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 50,
     width: '94%',
-    marginBottom: 30,
     color: '#ffff',
   },
   arrowContainer: {
@@ -36,15 +35,16 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#ffff',
-    width: '50%',
-    padding: 10,
-    marginVertical: 100,
+    width: '60%',
+    padding: 20,
+    marginVertical: 30,
     borderRadius: 12,
   },
   buttonText: {
     color: '#2196f3',
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight: 'bold',
   },
   subtitle: {
     fontSize: 40,
@@ -52,21 +52,22 @@ const styles = StyleSheet.create({
     color: '#ffff',
     textAlign: 'center',
     width: '90%',
-    marginVertical: 80,
+    marginVertical: 30,
   },
   highLighted: {
     color: '#fa4800',
   },
   carouselContainer: {
-    height: 800,
+    height: 650,
+    width: '90%',
   },
   peopleImg: {
     width: '90%',
     resizeMode: 'contain',
     height: 150,
   },
-  employee: {
-    width: '90%',
+  workers: {
+    marginBottom: 60,
   },
 });
 

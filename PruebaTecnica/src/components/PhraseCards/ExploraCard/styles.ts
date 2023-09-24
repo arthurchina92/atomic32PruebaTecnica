@@ -2,9 +2,8 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   card: {
+    width: 360,
     backgroundColor: '#fa4800',
-    width: '92%',
-    height: '65%',
     alignSelf: 'center',
     borderRadius: 10,
     margin: 20,
@@ -25,13 +24,14 @@ const styles = StyleSheet.create({
   },
   cardText: {
     fontSize: 20,
-    textAlign: 'right',
+    textAlign: 'left',
     color: '#ffff',
-    marginBottom: 25,
+    marginBottom: 15,
   },
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    width: '90%',
   },
   textContainer: {
     alignSelf: 'flex-start',

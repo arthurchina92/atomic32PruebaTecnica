@@ -12,6 +12,7 @@ import img1 from '../../../assets/PaqueteAtomic/Group40142x.png';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut2 from '../../../assets/PaqueteAtomic/Group4033.png';
 import styles from './styles';
+import Footer from '../../components/Footer';
 
 export default function LoginScreen() {
   const [nombre, setNombre] = useState('');
@@ -88,6 +89,7 @@ export default function LoginScreen() {
         </TouchableHighlight>
         <Image source={astronaut2} />
       </ImageBackground>
+      <Footer />
     </ScrollView>
   );
 }

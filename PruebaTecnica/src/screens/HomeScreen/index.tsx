@@ -8,7 +8,6 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
 import image from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut from '../../../assets/PaqueteAtomic/Group4032.png';
 import arrow from '../../../assets/PaqueteAtomic/Group40132x.png';
@@ -16,8 +15,14 @@ import peopleImg from '../../../assets/PaqueteAtomic/Group4040.png';
 import EmployeesColumn from '../../components/EmployeesColumn';
 import CardsCarousel from '../../components/PhraseCards';
 import styles from './styles';
+import Footer from '../../components/Footer';
+import {useNavigation} from '@react-navigation/native';
 
 function HomeScreen() {
+  const navigation = useNavigation();
+  const onRegister = () => {
+    navigation.navigate('Login');
+  };
   return (
     <ScrollView>
       <ImageBackground source={image} style={styles.imageBg}>
@@ -29,7 +34,7 @@ function HomeScreen() {
           <Text style={styles.arrowText}> Quiero saber más </Text>
         </View>
         <Image source={astronaut} style={styles.astronautImg} />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onRegister}>
           <Text style={styles.buttonText}>¡Quiero ser parte!</Text>
         </TouchableOpacity>
         <Text style={styles.subtitle}>
@@ -47,14 +52,17 @@ function HomeScreen() {
           <Text style={styles.highLighted}>TRABAJAR CON NOSOTROS!</Text>
         </Text>
         <Image source={peopleImg} style={styles.peopleImg} />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={onRegister}>
           <Text style={styles.buttonText}>¡Quiero ser parte!</Text>
         </TouchableOpacity>
         <Text style={styles.subtitle}>
           NUESTRO <Text style={styles.highLighted}>EQUIPO</Text>
         </Text>
-        <EmployeesColumn />
+        <View style={styles.workers}>
+          <EmployeesColumn />
+        </View>
       </ImageBackground>
+      <Footer />
     </ScrollView>
   );
 }

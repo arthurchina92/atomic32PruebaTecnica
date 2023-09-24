@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 400,
-    height: '100%',
   },
 });
 
