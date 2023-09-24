@@ -10,11 +10,12 @@ import {
   FlatList,
 } from 'react-native';
 
-import image from '../../assets/PaqueteAtomic/MaskGroup1.png';
-import astronaut from '../../assets/PaqueteAtomic/Group4032.png';
-import arrow from '../../assets/PaqueteAtomic/Group40132x.png';
-import peopleImg from '../../assets/PaqueteAtomic/Group4040.png';
-import EmployeesColumn from '../components/EmployeesColumn';
+import image from '../../../assets/PaqueteAtomic/MaskGroup1.png';
+import astronaut from '../../../assets/PaqueteAtomic/Group4032.png';
+import arrow from '../../../assets/PaqueteAtomic/Group40132x.png';
+import peopleImg from '../../../assets/PaqueteAtomic/Group4040.png';
+import EmployeesColumn from '../../components/EmployeesColumn';
+import CardsCarousel from '../../components/PhraseCards';
 
 function HomeScreen() {
   return (
@@ -36,8 +37,11 @@ function HomeScreen() {
           <Text style={styles.highLighted}>DE LA TECNOLOGÍA</Text>
         </Text>
         <View>
-          <Text>CARROUSEL</Text>
+          <View style={styles.carouselContainer}>
+            <CardsCarousel />
+          </View>
         </View>
+
         <Text style={styles.subtitle}>
           ¡TE ENCANTARÁ{' '}
           <Text style={styles.highLighted}>TRABAJAR CON NOSOTROS!</Text>
@@ -57,6 +61,7 @@ function HomeScreen() {
 
 const styles = StyleSheet.create({
   imageBg: {
+    flex: 1,
     height: '100%',
     width: '100%',
     resizeMode: 'cover',
@@ -68,10 +73,11 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   title: {
-    marginTop: 150,
+    textAlign: 'justify',
+    marginTop: 200,
     fontWeight: 'bold',
     fontSize: 50,
-    width: '90%',
+    width: '94%',
     marginBottom: 30,
     color: '#ffff',
   },
@@ -91,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffff',
     width: '50%',
     padding: 10,
-    marginVertical: 50,
+    marginVertical: 100,
     borderRadius: 12,
   },
   buttonText: {
@@ -101,18 +107,25 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 40,
+    fontWeight: 'bold',
     color: '#ffff',
     textAlign: 'center',
     width: '90%',
-    marginBottom: 40,
+    marginVertical: 80,
   },
   highLighted: {
     color: '#fa4800',
+  },
+  carouselContainer: {
+    height: 800,
   },
   peopleImg: {
     width: '90%',
     resizeMode: 'contain',
     height: 150,
+  },
+  employee: {
+    width: '90%',
   },
 });
 
