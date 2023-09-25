@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000000',
   },
   image1: {
     height: 50,
@@ -86,6 +87,12 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginVertical: 40,
     marginHorizontal: 20,
+  },
+  lock: {
+    position: 'absolute',
+    right: 10,
+    marginTop: 47,
+    zIndex: 1,
   },
 });
 

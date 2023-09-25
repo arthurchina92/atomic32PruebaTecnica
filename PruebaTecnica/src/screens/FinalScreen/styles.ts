@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000000',
   },
   image1: {
     height: 50,

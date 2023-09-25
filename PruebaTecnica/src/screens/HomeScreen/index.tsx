@@ -18,19 +18,24 @@ import Footer from '../../components/Footer';
 import {useNavigation} from '@react-navigation/native';
 
 function HomeScreen() {
+  const scrollToPosition = () => {
+    const positionY = 1100;
+    scrollViewRef.current.scrollTo({y: positionY, animated: true});
+  };
+  const scrollViewRef = React.createRef();
   const navigation = useNavigation();
   const onRegister = () => {
     navigation.navigate('Login');
   };
   return (
-    <ScrollView>
+    <ScrollView style={styles.body} ref={scrollViewRef}>
       <ImageBackground source={image} style={styles.imageBg}>
         <Text style={styles.title}>
           Desarrolla todo <Text style={styles.highLighted}>tu POTENCIAL</Text>{' '}
           dentro del equipo <Text style={styles.highLighted}>ATOMICLABS</Text>
         </Text>
         <View style={styles.arrowContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={scrollToPosition}>
             <Image source={arrow} style={styles.arrow} />
 
             <Text style={styles.arrowText}> Quiero saber más </Text>
@@ -65,7 +70,9 @@ function HomeScreen() {
           <WokersCard />
         </View>
       </ImageBackground>
-      <Footer />
+      <View style={styles.footerContainer}>
+        <Footer />
+      </View>
     </ScrollView>
   );
 }

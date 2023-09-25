@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#000000',
   },
   astronautImg: {
     height: 320,
@@ -68,6 +69,9 @@ const styles = StyleSheet.create({
   },
   workers: {
     marginBottom: 60,
+  },
+  footerContainer: {
+    backgroundColor: '#000000',
   },
 });
 

@@ -7,10 +7,12 @@ import {
   TextInput,
   TouchableHighlight,
   Image,
+  Alert,
 } from 'react-native';
 import img1 from '../../../assets/PaqueteAtomic/Group40142x.png';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut2 from '../../../assets/PaqueteAtomic/Group4033.png';
+import lock from '../../../assets/PaqueteAtomic/lock.png';
 import styles from './styles';
 import Footer from '../../components/Footer';
 import {useAppDispatch} from '../../../store/hook';
@@ -48,9 +50,21 @@ export default function LoginScreen() {
 
   const handleEnviar = () => {
     // Realizar el envío o la acción deseada si los nombres son válidos
+    if (nombre === '' || apellido === '') {
+      Alert.alert('Te falta llenar campos obligatorios');
+      return;
+    }
     if (!nombreError && !apellidoError) {
       navigation.navigate('Phone');
     }
+    if (nombreError || apellidoError) {
+      Alert.alert('Rellena los campos de manera correcta para continuar');
+    }
+  };
+
+  const buttonStyle = {
+    backgroundColor: nombreError || apellidoError ? 'gray' : '#fa4800',
+    opacity: nombreError || apellidoError ? 0.6 : 1,
   };
 
   return (
@@ -66,11 +80,13 @@ export default function LoginScreen() {
           Queremos saber que eres tú, por favor ingresa los siguientes datos:
         </Text>
         <View style={styles.textInputContainer}>
+          <Image source={lock} style={styles.lock} tintColor={'#515151'} />
           <Text style={styles.textInputText}>Nombre(s)</Text>
           <TextInput
             style={styles.textInput}
             onChangeText={validarNombre}
             value={nombre}
+            secureTextEntry={true}
           />
           {nombreError && (
             <Text style={styles.errorText}>
@@ -79,11 +95,13 @@ export default function LoginScreen() {
           )}
         </View>
         <View style={styles.textInputContainer}>
+          <Image source={lock} style={styles.lock} tintColor={'#515151'} />
           <Text style={styles.textInputText}>Apellido(s)</Text>
           <TextInput
             style={styles.textInput}
             onChangeText={validarApellido}
             value={apellido}
+            secureTextEntry={true}
           />
           {apellidoError && (
             <Text style={styles.errorText}>
@@ -92,7 +110,7 @@ export default function LoginScreen() {
           )}
         </View>
         <TouchableHighlight
-          style={styles.button}
+          style={[buttonStyle, styles.button]}
           onPress={() => handleEnviar()}>
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableHighlight>

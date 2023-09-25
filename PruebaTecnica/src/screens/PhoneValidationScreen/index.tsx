@@ -12,6 +12,7 @@ import {
 import img1 from '../../../assets/PaqueteAtomic/Group4023.png';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut2 from '../../../assets/PaqueteAtomic/Group4034.png';
+import lock from '../../../assets/PaqueteAtomic/lock.png';
 import styles from './styles';
 import Footer from '../../components/Footer';
 import {useAppDispatch, useAppSelector} from '../../../store/hook';
@@ -50,7 +51,6 @@ export default function PhoneValidationScreen() {
           } else if (response.status === 405) {
             Alert.alert('Method not allowed(405)');
           }
-
           throw new Error('Network response was not ok');
         }
         return response.json();
@@ -100,11 +100,13 @@ export default function PhoneValidationScreen() {
           Ingresar tu número a 10 dígitos para continuar
         </Text>
         <View style={styles.textInputContainer}>
+          <Image source={lock} style={styles.lock} tintColor={'#515151'} />
           <Text style={styles.textInputText}>Número</Text>
           <TextInput
             style={styles.textInput}
             onChangeText={validarNumero}
             value={numero}
+            secureTextEntry={true}
           />
           {numeroError && (
             <Text style={styles.errorText}>{numeroMensajeError}</Text>

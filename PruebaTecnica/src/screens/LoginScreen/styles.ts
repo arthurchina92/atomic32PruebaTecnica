@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#000000',
   },
   image1: {
     height: 70,
@@ -60,6 +61,12 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: '#c20000',
+  },
+  lock: {
+    position: 'absolute',
+    right: 10,
+    marginTop: 47,
+    zIndex: 1,
   },
 });
 
