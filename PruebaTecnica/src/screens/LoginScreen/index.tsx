@@ -13,26 +13,33 @@ import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut2 from '../../../assets/PaqueteAtomic/Group4033.png';
 import styles from './styles';
 import Footer from '../../components/Footer';
+import {useAppDispatch, useAppSelector} from '../../../store/hook';
+import {setName, setLastName} from '../../../store/slices/userInformationSlice';
+import {useNavigation} from '@react-navigation/native';
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
+  const dispatch = useAppDispatch();
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
 
-  const validarNombre = text => {
+  const validarNombre = (text: string) => {
     if (text.length < 5) {
       setNombreError(true);
     } else {
       setNombreError(false);
     }
+    dispatch(setName(text));
     setNombre(text); // Actualizar el valor del nombre
   };
 
-  const validarApellido = text => {
+  const validarApellido = (text: string) => {
     if (text.length < 5) {
       setApellidoError(true);
     } else {
       setApellidoError(false);
     }
+    dispatch(setLastName(text));
     setApellido(text); // Actualizar el valor del apellido
   };
 
@@ -42,7 +49,7 @@ export default function LoginScreen() {
   const handleEnviar = () => {
     // Realizar el envío o la acción deseada si los nombres son válidos
     if (!nombreError && !apellidoError) {
-      // Realizar el envío o la acción deseada
+      navigation.navigate('Phone');
     }
   };
 
@@ -84,7 +91,9 @@ export default function LoginScreen() {
             </Text>
           )}
         </View>
-        <TouchableHighlight style={styles.button}>
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => handleEnviar()}>
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableHighlight>
         <Image source={astronaut2} />

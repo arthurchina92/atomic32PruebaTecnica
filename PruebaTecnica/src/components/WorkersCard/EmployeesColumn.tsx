@@ -1,6 +1,6 @@
 import {View, Text, FlatList} from 'react-native';
-import {React, useState, useEffect} from 'react';
-import Employee from './Employee';
+import React, {useState, useEffect} from 'react';
+import Employee from '../WorkerItem';
 
 export default function EmployeesCard() {
   const [person, setPerson] = useState([]);

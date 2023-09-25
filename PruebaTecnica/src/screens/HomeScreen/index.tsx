@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   ImageBackground,
@@ -12,7 +11,7 @@ import image from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut from '../../../assets/PaqueteAtomic/Group4032.png';
 import arrow from '../../../assets/PaqueteAtomic/Group40132x.png';
 import peopleImg from '../../../assets/PaqueteAtomic/Group4040.png';
-import EmployeesColumn from '../../components/EmployeesColumn';
+import EmployeesColumn from '../../components/WorkersCard/EmployeesColumn';
 import CardsCarousel from '../../components/PhraseCards';
 import styles from './styles';
 import Footer from '../../components/Footer';
@@ -27,11 +26,15 @@ function HomeScreen() {
     <ScrollView>
       <ImageBackground source={image} style={styles.imageBg}>
         <Text style={styles.title}>
-          Desarrolla todo tu POTENCIAL dentro del equipo ATOMICLABS
+          Desarrolla todo <Text style={styles.highLighted}>tu POTENCIAL</Text>{' '}
+          dentro del equipo <Text style={styles.highLighted}>ATOMICLABS</Text>
         </Text>
         <View style={styles.arrowContainer}>
-          <Image source={arrow} style={styles.arrow} />
-          <Text style={styles.arrowText}> Quiero saber más </Text>
+          <TouchableOpacity>
+            <Image source={arrow} style={styles.arrow} />
+
+            <Text style={styles.arrowText}> Quiero saber más </Text>
+          </TouchableOpacity>
         </View>
         <Image source={astronaut} style={styles.astronautImg} />
         <TouchableOpacity style={styles.button} onPress={onRegister}>

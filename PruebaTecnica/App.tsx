@@ -6,12 +6,14 @@ import PhoneValidationScreen from './src/screens/PhoneValidationScreen';
 import Footer from './src/components/Footer';
 import HomeScreen from './src/screens/HomeScreen';
 import FinalScreen from './src/screens/FinalScreen';
+import {store} from './store/store';
+import {Provider} from 'react-redux';
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Router />
-    </>
+    </Provider>
   );
 }
 

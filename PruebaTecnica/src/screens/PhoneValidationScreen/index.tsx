@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableHighlight,
   Image,
+  Alert,
 } from 'react-native';
 import img1 from '../../../assets/PaqueteAtomic/Group4023.png';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
@@ -14,12 +15,57 @@ import astronaut2 from '../../../assets/PaqueteAtomic/Group4034.png';
 import linkedinImg from '../../../assets/PaqueteAtomic/linkedin.png';
 import twitterImg from '../../../assets/PaqueteAtomic/twitter.png';
 import styles from './styles';
+import {useAppDispatch, useAppSelector} from '../../../store/hook';
+import {setNumber} from '../../../store/slices/userInformationSlice';
+import {useNavigation} from '@react-navigation/native';
 
 export default function PhoneValidationScreen() {
+  const dispatch = useAppDispatch();
+  const navigation = useNavigation();
+  const {firstname, lastname, phoneNumber} = useAppSelector(
+    state => state.userInformation,
+  );
   const [numero, setNumero] = useState('');
   const [numeroError, setNumeroError] = useState(false);
   const [numeroMensajeError, setNumeroMensajeError] = useState('');
-  const validarNumero = text => {
+
+  const sendData = () => {
+    fetch('https://atomic-test-api.onrender.com/form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstname: firstname,
+        lastname: lastname,
+        phoneNumber: phoneNumber,
+      }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          console.log(response.status);
+          if (response.status === 422) {
+            Alert.alert('error en el sistema (random error)');
+          } else if (response.status === 405) {
+            Alert.alert('Method not allowed(405)');
+          }
+
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        console.log('boton presionado');
+        navigation.navigate('Final');
+      })
+      .catch(error => {
+        console.log('dio error');
+        console.error(error);
+      });
+  };
+
+  const validarNumero = (text: String) => {
     // Expresión regular para verificar si el texto contiene solo dígitos numéricos
     const regex = /^[0-9]+$/;
 
@@ -33,7 +79,7 @@ export default function PhoneValidationScreen() {
       setNumeroError(false);
       setNumeroMensajeError('');
     }
-
+    dispatch(setNumber(text));
     setNumero(text); // Actualizar el valor del número
   };
 
@@ -63,7 +109,7 @@ export default function PhoneValidationScreen() {
             <Text style={styles.errorText}>{numeroMensajeError}</Text>
           )}
         </View>
-        <TouchableHighlight style={styles.button}>
+        <TouchableHighlight onPress={() => sendData()} style={styles.button}>
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableHighlight>
         <Image source={astronaut2} style={styles.astronaut2} />

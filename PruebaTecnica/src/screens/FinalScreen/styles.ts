@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     marginLeft: 20,
+    textAlign: 'center',
   },
   highlighted: {
     color: '#fa4800',
@@ -36,59 +37,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginTop: 40,
   },
-  textInputContainer: {
-    width: '90%',
-    marginTop: 40,
-  },
-  textInputText: {
-    color: '#ffff',
-    marginBottom: 15,
-  },
-  textInput: {
-    backgroundColor: '#ffff',
-    borderRadius: 7,
-    padding: 11,
-  },
-  button: {
-    backgroundColor: '#fa4800',
-    marginTop: 70,
-    width: '56%',
-    alignItems: 'center',
-    padding: 13,
-    borderRadius: 50,
-  },
-  buttonText: {
-    color: '#ffff',
-    fontSize: 20,
-  },
-  errorText: {
-    color: '#c20000',
-  },
   astronaut3: {
     height: 400,
     width: 450,
     resizeMode: 'contain',
-  },
-  footer: {
-    backgroundColor: '#000000',
-    textAlign: 'center',
-  },
-  footerText: {
-    color: '#ffff',
-    textAlign: 'center',
-    marginTop: 30,
-    fontSize: 15,
-  },
-  icons: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  iconImg: {
-    height: 25,
-    resizeMode: 'contain',
-    marginVertical: 40,
-    marginHorizontal: 20,
   },
 });
 

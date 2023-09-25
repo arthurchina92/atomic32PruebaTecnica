@@ -8,11 +8,8 @@ import {
   Image,
 } from 'react-native';
 import React from 'react';
-import img1 from '../../../assets/PaqueteAtomic/Group4023.png';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut3 from '../../../assets/PaqueteAtomic/Group4039.png';
-import linkedinImg from '../../../assets/PaqueteAtomic/linkedin.png';
-import twitterImg from '../../../assets/PaqueteAtomic/twitter.png';
 import styles from './styles';
 import Footer from '../../components/Footer';
 
@@ -21,16 +18,17 @@ export default function FinalScreen() {
     <ScrollView style={styles.body}>
       <ImageBackground source={bgImg} style={styles.image}>
         <View style={styles.titleContainer}>
-          <Image source={img1} style={styles.image1} />
           <Text style={styles.title}>
-            VALIDA TU <Text style={styles.highlighted}>CELULAR</Text>
+            TUS DATOS HAN SIDO{' '}
+            <Text style={styles.highlighted}>ENVIADOS CON ÉXITO</Text>
           </Text>
         </View>
         <Text style={styles.text}>
-          Necesitamos validar tu número para continuar
+          En breve recibirás un correo de confirmación por parte del equipo de
+          AtomicLabs.
         </Text>
         <Text style={styles.text}>
-          Ingresar tu número a 10 dígitos para continuar
+          Recuerda revisar tu bandeja de SPAM ¡Esperamos verte pronto!
         </Text>
         <Image source={astronaut3} style={styles.astronaut3} />
       </ImageBackground>
