@@ -1,12 +1,4 @@
-import {
-  View,
-  ScrollView,
-  Text,
-  ImageBackground,
-  TextInput,
-  TouchableHighlight,
-  Image,
-} from 'react-native';
+import {View, ScrollView, Text, ImageBackground, Image} from 'react-native';
 import React from 'react';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut3 from '../../../assets/PaqueteAtomic/Group4039.png';

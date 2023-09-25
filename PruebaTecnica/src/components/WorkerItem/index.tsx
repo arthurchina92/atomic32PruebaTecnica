@@ -1,7 +1,8 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
+import styles from './styles';
 
-export default function ({worker}) {
+export default function WorkerItem({worker}) {
   return (
     <View style={styles.imageContainer}>
       <Image source={{uri: worker.avatar}} style={styles.avatar} />
@@ -10,30 +11,3 @@ export default function ({worker}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  avatar: {
-    height: 150,
-    width: 150,
-    marginBottom: 30,
-  },
-  imageContainer: {
-    backgroundColor: '#004091',
-    marginVertical: 15,
-    paddingHorizontal: 110,
-    paddingVertical: 40,
-    borderRadius: 10,
-  },
-  workerName: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: '#ffff',
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  workerPosition: {
-    fontSize: 20,
-    color: '#ffff',
-    textAlign: 'center',
-  },
-});

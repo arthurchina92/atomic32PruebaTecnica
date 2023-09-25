@@ -1,8 +1,8 @@
-import {View, Text, FlatList} from 'react-native';
+import {View} from 'react-native';
 import React, {useState, useEffect} from 'react';
-import Employee from '../WorkerItem';
+import WorkerItem from '../WorkerItem';
 
-export default function EmployeesCard() {
+export default function WokersCard() {
   const [person, setPerson] = useState([]);
 
   const employees = async () => {
@@ -18,7 +18,7 @@ export default function EmployeesCard() {
   return (
     <View>
       {person.map((worker, key) => {
-        return <Employee worker={worker} key={key} />;
+        return <WorkerItem worker={worker} key={key} />;
       })}
     </View>
   );

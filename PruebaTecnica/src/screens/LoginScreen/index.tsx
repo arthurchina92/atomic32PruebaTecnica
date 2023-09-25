@@ -13,7 +13,7 @@ import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut2 from '../../../assets/PaqueteAtomic/Group4033.png';
 import styles from './styles';
 import Footer from '../../components/Footer';
-import {useAppDispatch, useAppSelector} from '../../../store/hook';
+import {useAppDispatch} from '../../../store/hook';
 import {setName, setLastName} from '../../../store/slices/userInformationSlice';
 import {useNavigation} from '@react-navigation/native';
 

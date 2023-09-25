@@ -11,7 +11,7 @@ import image from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut from '../../../assets/PaqueteAtomic/Group4032.png';
 import arrow from '../../../assets/PaqueteAtomic/Group40132x.png';
 import peopleImg from '../../../assets/PaqueteAtomic/Group4040.png';
-import EmployeesColumn from '../../components/WorkersCard/EmployeesColumn';
+import WokersCard from '../../components/WorkersCard';
 import CardsCarousel from '../../components/PhraseCards';
 import styles from './styles';
 import Footer from '../../components/Footer';
@@ -62,7 +62,7 @@ function HomeScreen() {
           NUESTRO <Text style={styles.highLighted}>EQUIPO</Text>
         </Text>
         <View style={styles.workers}>
-          <EmployeesColumn />
+          <WokersCard />
         </View>
       </ImageBackground>
       <Footer />

@@ -12,9 +12,8 @@ import {
 import img1 from '../../../assets/PaqueteAtomic/Group4023.png';
 import bgImg from '../../../assets/PaqueteAtomic/MaskGroup1.png';
 import astronaut2 from '../../../assets/PaqueteAtomic/Group4034.png';
-import linkedinImg from '../../../assets/PaqueteAtomic/linkedin.png';
-import twitterImg from '../../../assets/PaqueteAtomic/twitter.png';
 import styles from './styles';
+import Footer from '../../components/Footer';
 import {useAppDispatch, useAppSelector} from '../../../store/hook';
 import {setNumber} from '../../../store/slices/userInformationSlice';
 import {useNavigation} from '@react-navigation/native';
@@ -45,7 +44,9 @@ export default function PhoneValidationScreen() {
         if (!response.ok) {
           console.log(response.status);
           if (response.status === 422) {
-            Alert.alert('error en el sistema (random error)');
+            Alert.alert(
+              'Ooops, parece que algo ha salido mal :/, vuelve a intentar :)',
+            );
           } else if (response.status === 405) {
             Alert.alert('Method not allowed(405)');
           }
@@ -65,7 +66,7 @@ export default function PhoneValidationScreen() {
       });
   };
 
-  const validarNumero = (text: String) => {
+  const validarNumero = (text: string) => {
     // Expresión regular para verificar si el texto contiene solo dígitos numéricos
     const regex = /^[0-9]+$/;
 
@@ -114,16 +115,7 @@ export default function PhoneValidationScreen() {
         </TouchableHighlight>
         <Image source={astronaut2} style={styles.astronaut2} />
       </ImageBackground>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          2020 AtomicLabs. Todos los derechos reservados
-        </Text>
-        <Text style={styles.footerText}>Aviso de privacidad</Text>
-        <View style={styles.icons}>
-          <Image source={linkedinImg} style={styles.iconImg} />
-          <Image source={twitterImg} style={styles.iconImg} />
-        </View>
-      </View>
+      <Footer />
     </ScrollView>
   );
 }
