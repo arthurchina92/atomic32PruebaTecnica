@@ -10,15 +10,15 @@ export default function ExploraCard() {
       <Text style={styles.cardTitle}>EXPLORA</Text>
       <View style={styles.textContainer}>
         <View style={styles.rowContainer}>
-          <View style={styles.dot}></View>
+          <View style={styles.dot} />
           <Text style={styles.cardText}>Inovación y creacion tecnológica</Text>
         </View>
         <View style={styles.rowContainer}>
-          <View style={styles.dot}></View>
+          <View style={styles.dot} />
           <Text style={styles.cardText}>UI/UX</Text>
         </View>
         <View style={styles.rowContainer}>
-          <View style={styles.dot}></View>
+          <View style={styles.dot} />
           <Text style={styles.cardText}>Innovación</Text>
         </View>
       </View>

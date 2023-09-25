@@ -10,17 +10,17 @@ export default function ConquistaCard() {
       <Text style={styles.cardTitle}>CONQUISTA</Text>
       <View style={styles.textContainer}>
         <View style={styles.rowContainer}>
-          <View style={styles.dot}></View>
+          <View style={styles.dot} />
           <Text style={styles.cardText}>
             Desarrollo tecnológico y creación tecnológica
           </Text>
         </View>
         <View style={styles.rowContainer}>
-          <View style={styles.dot}></View>
+          <View style={styles.dot} />
           <Text style={styles.cardText}>Ciberseguridad</Text>
         </View>
         <View style={styles.rowContainer}>
-          <View style={styles.dot}></View>
+          <View style={styles.dot} />
           <Text style={styles.cardText}>Servicios de la nube</Text>
         </View>
       </View>
